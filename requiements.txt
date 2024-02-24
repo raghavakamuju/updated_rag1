@@ -1,0 +1,9 @@
+streamlit
+python-dotenv
+beautifulsoup4
+requests
+sentence-transformers
+faiss-cpu  # or faiss-gpu if you're using GPU
+numpy
+langchain 
+openai
