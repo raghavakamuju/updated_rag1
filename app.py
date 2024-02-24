@@ -35,7 +35,7 @@ website_links = [
 model_name = "sentence-transformers/all-MiniLM-L6-v2"
 model = SentenceTransformer(model_name)
 load_dotenv()
-open_ai_token = st.secrets('api_key')
+open_ai_token = st.secrets['api_key']
 if os.path.exists("chunks_embeddings.pkl"):
     with open("chunks_embeddings.pkl", "rb") as f:
         chunks, chunk_embeddings = pickle.load(f)
