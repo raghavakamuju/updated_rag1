@@ -69,7 +69,13 @@ def answer(text, model,listing_history):
 
     prompt_template = PromptTemplate(
         input_variables=['query_text', 'retrieved','listing_history'],
-        template="Given the following information: '{retrieved}' and {listing_history} . Answer the question: '{query_text}'. "
+        template="Based on the user's query "{query_text}" and the provided relevant information: {retrieved}, your task is to synthesize a clear, accurate, and concise response. Follow these steps:
+
+1. Analyze the provided information to understand its relevance to the user's query.
+2. Construct a response that directly addresses the user's query using the information given. Aim for clarity and brevity.
+3. If the information does not fully address the user's query, clearly state that the query cannot be completely answered with the available information and suggest the need for additional sources or clarification.
+4.you can also use the data in {listing_history} for  answering
+Remember, your goal is to provide a helpful and precise answer that is directly based on the provided information. Avoid making assumptions beyond the given content."
     )
     start_time = time.time()
     query_embedding = model.encode(text)
