@@ -60,7 +60,7 @@ dimension = chunk_embeddings[0].shape[0]
 faiss_index = faiss.IndexFlatL2(dimension)
 embeddings_array = np.array(chunk_embeddings).astype('float32')
 faiss_index.add(embeddings_array)
-from langchain.llms import OpenAI
+from langchain_community.llms import OpenAI
 llm_openai = OpenAI(temperature=0.6,openai_api_key=open_ai_token)
 
 def answer(text, model,listing_history):
