@@ -7,3 +7,4 @@ faiss-cpu  # or faiss-gpu if you're using GPU
 numpy
 langchain 
 openai
+langchain-community
